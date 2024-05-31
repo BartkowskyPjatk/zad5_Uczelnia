@@ -1,11 +1,16 @@
 public class StudyProgramme {
-    private String nameOfStudiesMajor, grades;
-    private int numberOfSemesters, numberOfPossibleNTNs;
-    public StudyProgramme(String nameOfStudiesMajor, String grades, int numberOfSemesters, int numberOfPossibleNTNs){
+    private String nameOfStudiesMajor, TypeOfGrades;
+    private int numberOfSemesters, numberOfPossibleITNs;
+    public StudyProgramme(String nameOfStudiesMajor, String TypeOfGrades, int numberOfSemesters, int numberOfPossibleITNs){
         this.nameOfStudiesMajor = nameOfStudiesMajor;
-        this.grades = grades;
+        this.TypeOfGrades = TypeOfGrades;
         this.numberOfSemesters = numberOfSemesters;
-        this.numberOfPossibleNTNs = numberOfPossibleNTNs;
+        this.numberOfPossibleITNs = numberOfPossibleITNs;
     }
-
+    public  int getNrOfPossibleITN(){
+        return this.numberOfPossibleITNs;
+    }
+    public int getNumberOfSemesters(){
+        return this.numberOfSemesters;
+    }
 }

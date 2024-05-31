@@ -7,7 +7,8 @@ public class Student {
     private ArrayList<Grade> Grades;
     private static int indexNumber = 1;
     private String studentIndexNumber;
-    private int currentSemester;
+    private int currentSemester,numberOfITNs = 0;
+    private StudyProgramme directionOfStudy;
     private String studentStatus;
 
     public Student(String fname, String lname, String email, String address, String telNumber, Date date){
@@ -21,8 +22,9 @@ public class Student {
         studentIndexNumber = "s"+indexNumber;
         indexNumber++;
         //nadanie statusu studenta
-        studentStatus = "candidate";
-
+        this.studentStatus = "candidate";
+        //dodanie studenta do listy wszystkich studentów
+        Students.addStudent(this);
     }
 
     public void displayStudent(){
@@ -40,5 +42,21 @@ public class Student {
         System.out.println("Address: "+this.address);
         System.out.println("Telephone number: "+this.telNumber);
 
+    }
+
+    public void enrollStudent(StudyProgramme fieldOfStudy){
+        this.directionOfStudy = fieldOfStudy;
+        this.currentSemester = 1;
+    }
+
+    public void promoteStudent(){
+        if (this.studentStatus.equals("student")){
+            if (this.numberOfITNs>directionOfStudy.getNrOfPossibleITN()){
+                currentSemester++;
+                if (currentSemester>directionOfStudy.getNumberOfSemesters()){
+                    this.studentStatus = "graduate";
+                }
+            }
+        }
     }
 }
