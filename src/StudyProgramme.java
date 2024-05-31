@@ -1,9 +1,9 @@
 public class StudyProgramme {
-    private String nameOfStudiesMajor, TypeOfGrades;
+    private String nameOfStudiesMajor, prosperityOfStudy;
     private int numberOfSemesters, numberOfPossibleITNs;
-    public StudyProgramme(String nameOfStudiesMajor, String TypeOfGrades, int numberOfSemesters, int numberOfPossibleITNs){
+    public StudyProgramme(String nameOfStudiesMajor, String prosperityOfStudy, int numberOfSemesters, int numberOfPossibleITNs){
         this.nameOfStudiesMajor = nameOfStudiesMajor;
-        this.TypeOfGrades = TypeOfGrades;
+        this.prosperityOfStudy = prosperityOfStudy;
         this.numberOfSemesters = numberOfSemesters;
         this.numberOfPossibleITNs = numberOfPossibleITNs;
     }

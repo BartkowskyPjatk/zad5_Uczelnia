@@ -4,7 +4,7 @@ import java.util.Objects;
 public class Student {
     private String fname, lname, email, address, telNumber;
     private Date birthday;
-    private ArrayList<Grade> Grades;
+    private ArrayList<Grade> grades = new ArrayList<Grade>();
     private static int indexNumber = 1;
     private String studentIndexNumber;
     private int currentSemester,numberOfITNs = 0;
@@ -46,17 +46,27 @@ public class Student {
 
     public void enrollStudent(StudyProgramme fieldOfStudy){
         this.directionOfStudy = fieldOfStudy;
+        this.studentStatus = "student";
         this.currentSemester = 1;
     }
 
     public void promoteStudent(){
         if (this.studentStatus.equals("student")){
-            if (this.numberOfITNs>directionOfStudy.getNrOfPossibleITN()){
+            if (this.numberOfITNs<directionOfStudy.getNrOfPossibleITN()){
                 currentSemester++;
                 if (currentSemester>directionOfStudy.getNumberOfSemesters()){
                     this.studentStatus = "graduate";
                 }
+            } else{
+                System.out.println(this.fname + this.lname + "can't graduate (exceeded number of ITN's) ");
             }
         }
+    }
+    public void addGrade(int grade, String subject){
+        Grade ocena = new Grade(grade, subject);
+        if (grade == 2){
+            numberOfITNs++;
+        }
+        grades.add(ocena);
     }
 }

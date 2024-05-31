@@ -5,9 +5,9 @@ public class Main {
         StudyProgramme it = new StudyProgramme("IT", "AAA", 7, 5);
         //7 is the number of semesters, 5 - number of possible ITN's before
         //being allowed to be promoted to next semester
- s.enrollStudent(it); //we assign the student to the first semester by default
+            s.enrollStudent(it); //we assign the student to the first semester by default
             s.addGrade(5, "PGO");
- s.addGrade(2, "APBD");
+            s.addGrade(2, "APBD");
     //...
 
     /*We try to promote students - this method should go through
